@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcomr to nature"
+        android:textColor="#F8F7FA"
+        android:textSize="28dp" />
+
+    <ImageView
+        android:id="@+id/dachigamimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/heading"
+        android:src="@drawable/dachigam"
+        />
+
+    <TextView
+        android:id="@+id/dachigam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dachigamimage"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-275dp"
+        android:layout_toEndOf="@+id/dachigamimage"
+        android:text="Dachigam National Park is located 22 kilometers from Srinagar, Jammu and Kashmir.  covers an area of 500 km2."
+        android:textColor="#F8F7FA"
+        android:textSize="28dp" />
+
+    <ImageView
+        android:id="@+id/tulipimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dachigam"
+        android:src="@drawable/tulipgarden" />
+
+    <TextView
+        android:id="@+id/tulip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tulipimage"
+        android:layout_marginTop="7dp"
+        android:text="Indira Gandhi Memorial Tulip garden, previously Model Floriculture Center, is a tulip garden in Srinagar, Kashmir."
+        android:textColor="#F8F7FA"
+        android:textSize="28dp" />
+
+</RelativeLayout>
