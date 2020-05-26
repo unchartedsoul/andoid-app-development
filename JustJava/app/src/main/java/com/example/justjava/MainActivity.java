@@ -6,8 +6,6 @@ package com.example.justjava;
         import android.widget.TextView;
         import java.text.NumberFormat;
 
-
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -21,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
     public void incriment(View view) {
 
         numberofcoffe = numberofcoffe + 1 ;
-        display(numberofcoffe);}
+        displayQunatity(numberofcoffe);}
 
     public void decrement(View view) {
         numberofcoffe =numberofcoffe -1;
-        display(numberofcoffe);}
+        displayQunatity(numberofcoffe);}
 
     public void submitOrder(View view) {
         int price =numberofcoffe*5;
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQunatity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quntity_text_view);
         quantityTextView.setText("" + number);
     }
