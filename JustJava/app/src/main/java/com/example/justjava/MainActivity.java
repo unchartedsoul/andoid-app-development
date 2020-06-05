@@ -3,6 +3,8 @@ package com.example.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    int quantity = 2;
+    int quantity = 0;
 
     public void incriment(View view) {
 
@@ -28,9 +30,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        calculatePrice(quantity, 10);
-        int order = calculatePrice(quantity, 10);
-        String orderMessage = createOrderSummery(order);
+        EditText namefield = (EditText) findViewById(R.id.name_field);
+        String name = namefield.getText().toString();
+
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate);
+        boolean hasChocolate = chocolateCheckBox.isChecked();
+
+        int price = calculatePrice(hasChocolate, hasWhippedCream);
+        String orderMessage = createOrderSummery(name, price, hasWhippedCream, hasChocolate);
         displayMessage(orderMessage);
 
     }
@@ -50,16 +60,26 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    private int calculatePrice(int quantuty, int pricrpapercup) {
-        int order = quantity * pricrpapercup;
-        return order;
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        int basePrice = 5;
+
+        if (addWhippedCream) {
+            basePrice = basePrice + 1;
+        }
+        if (addChocolate) {
+            basePrice = basePrice + 2;
+        }
+        int price = quantity * basePrice;
+        return price;
     }
 
-    private String createOrderSummery(int order) {
-        String priceMessage = "Name: Kaptain Kunal";
-        priceMessage = priceMessage + "Quantity:" + quantity;
-        priceMessage = priceMessage + "total: $" + order;
-        priceMessage = priceMessage + "\n tahnk you";
+    private String createOrderSummery(String name, int price, boolean addWhippedCream, boolean addchocolate) {
+        String priceMessage = "Name:" + name;
+        priceMessage += "\nAdd whipped cream? " + addWhippedCream;
+        priceMessage += "\nAdd Chocolate? " + addchocolate;
+        priceMessage += "\nQuantity:" + quantity;
+        priceMessage += "\ntotal: $" + price;
+        priceMessage += "\n thank you";
         return priceMessage;
     }
 }
