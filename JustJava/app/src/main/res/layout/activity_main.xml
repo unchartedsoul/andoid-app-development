@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,13 +16,13 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="16sp"
             android:hint="Name"
-            android:inputType="textCapWords" />
+            style="@style/CustomText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16sp"
-            android:text="TOPPINGS"
+            android:text="@string/topping"
             android:textAllCaps="true"
             android:textSize="18sp" />
 
@@ -77,22 +78,6 @@
                 android:text="+" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginBottom="16sp"
-            android:text="PRICE"
-            android:textAllCaps="true"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/order_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
 
         <Button
             android:layout_width="wrap_content"

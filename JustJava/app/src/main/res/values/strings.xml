@@ -1,3 +1,13 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">JustJava</string>
+
+    <!-- header text for tje list of toppings[character limit=20] -->
+    <string name="topping">Topping</string>
+
+    <!-- Thank you message for the summery [character limit=none] -->
+    <string name="thank_you">Thank you!</string>
+
+    <!-- Name  for the order summery. It will be shown in the format of "Name: Any" where any is the user name.
+     [character limit=none] -->
+    <string name="order_summery_name">Name: <xliff:g example="Any" id="name">%s</xliff:g> </string>
 </resources>
