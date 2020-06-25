@@ -15,6 +15,7 @@
             android:scaleType="centerCrop"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:contentDescription=""
             android:src="@drawable/androidparty" />
 
 
@@ -26,7 +27,7 @@
             android:textSize="36sp"
             android:fontFamily="sans-serif-light"
             android:textColor="@android:color/white"
-            android:text="Happy Birthay" />
+            android:text="@string/happy_birthay" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,10 +39,6 @@
             android:text="from sudanshu"
             android:textColor="@android:color/white"
             android:textSize="36sp" />
-
-
-
-
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
